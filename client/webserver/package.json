@@ -1,0 +1,27 @@
+{
+  "name": "webserver",
+  "version": "0.0.1",
+  "description": "CanMap Front End Server",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "CanMap",
+    "Web",
+    "Server",
+    "Front",
+    "End",
+    "UI"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.0",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "path": "^0.12.7",
+    "url": "^0.11.0"
+  }
+}
