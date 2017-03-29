@@ -1,0 +1,604 @@
+@import url("font-awesome.min.css");
+@import url("googlefonts.css");
+
+/* General Stuff */
+
+html, body, div, span, object, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, em, img, strike, strong, b, u, i, center, ol, ul, li, form, label, legend, table, caption, tr, th, td, article, aside, canvas, figure, footer, header, menu, nav, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+header, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+/* Content */
+
+body {
+  background: #fff;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18pt;
+  font-weight: 300;
+  line-height: 1.75em;
+  color: #888888;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+  color: #666;
+  line-height: 1.5em;
+}
+
+h2 {
+  font-size: 3em;
+  letter-spacing: -1px;
+}
+
+strong, b {
+  font-weight: 500;
+  color: #666;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  border-bottom: dotted 1px rgba(128, 128, 128, 0.5);
+  outline: 0;
+}
+
+
+
+header {
+  margin: 0;
+}
+
+.content {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  /*Readjusting side menu and content ratio*/
+  .content.\31 25\25 {
+    width: 100%;
+    max-width: 1750px;
+    min-width: 1400px;
+  }
+
+  .content.\37 5\25 {
+    width: 1050px;
+  }
+
+  .content.\35 0\25 {
+    width: 700px;
+  }
+
+  .content.\32 5\25 {
+    width: 350px;
+  }
+
+  .content {
+		width: 1400px;
+	}
+
+  @media screen and (min-width: 961px) and (max-width: 1880px) {
+
+		.content.\31 25\25 {
+			width: 100%;
+			max-width: 1500px;
+			min-width: 1200px;
+		}
+
+		.content.\37 5\25 {
+			width: 900px;
+		}
+
+		.content.\35 0\25 {
+			width: 600px;
+		}
+
+		.content.\32 5\25 {
+			width: 300px;
+		}
+
+		.content {
+			width: 1200px;
+		}
+
+	}
+
+	@media screen and (min-width: 961px) and (max-width: 1620px) {
+
+		.content.\31 25\25 {
+			width: 100%;
+			max-width: 1200px;
+			min-width: 960px;
+		}
+
+		.content.\37 5\25 {
+			width: 720px;
+		}
+
+		.content.\35 0\25 {
+			width: 480px;
+		}
+
+		.content.\32 5\25 {
+			width: 240px;
+		}
+
+		.content {
+			width: 960px;
+		}
+
+	}
+
+	@media screen and (min-width: 961px) and (max-width: 1320px) {
+
+		.content.\31 25\25 {
+			width: 100%;
+			max-width: 125%;
+			min-width: 100%;
+		}
+
+		.content.\37 5\25 {
+			width: 75%;
+		}
+
+		.content.\35 0\25 {
+			width: 50%;
+		}
+
+		.content.\32 5\25 {
+			width: 25%;
+		}
+
+		.content {
+			width: 100%;
+		}
+
+	}
+
+	@media screen and (max-width: 960px) {
+
+		.content.\31 25\25 {
+			width: 100%;
+			max-width: 125%;
+			min-width: 100%;
+		}
+
+		.content.\37 5\25 {
+			width: 75%;
+		}
+
+		.content.\35 0\25 {
+			width: 50%;
+		}
+
+		.content.\32 5\25 {
+			width: 25%;
+		}
+
+		.content {
+			width: 100%;
+		}
+
+	}
+
+	@media screen and (max-width: 736px) {
+
+		.content.\31 25\25 {
+			width: 100%;
+			max-width: 125%;
+			min-width: 100%;
+		}
+
+		.content.\37 5\25 {
+			width: 75%;
+		}
+
+		.content.\35 0\25 {
+			width: 50%;
+		}
+
+		.content.\32 5\25 {
+			width: 25%;
+		}
+
+		.content {
+			width: 100% !important;
+		}
+
+	}
+
+/* Side Menu */
+#header {
+  background: #213029;
+  box-shadow: inset -0.25em 0 0.25em 0 rgba(0, 0, 0, 0.1);
+  color: #fff;
+  height: 100%;
+  left: 0;
+  overflow-y: auto;
+  position: fixed;
+  text-align: right;
+  top: 0;
+  width: 375px;
+}
+
+#logo {
+  position: relative;
+  margin: 1.75em 1.5em 1.5em 1.5em;
+  min-height: 48px;
+  cursor: default;
+}
+
+#logo h1 {
+  position: relative;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1em;
+}
+
+#logo .image {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.image {
+  display: inline-block;
+  border: 0;
+}
+
+.image.waterloo {
+  width: 1.5em;
+  background: transparent;
+}
+
+.image.waterloo img {
+  width: 1.5em;
+}
+
+#nav ul {
+  margin-bottom: 0;
+}
+
+#nav ul li a {
+  display: block;
+  padding: 0.5em 1.5em 0.5em 1.5em;
+  color: rgba(255, 255, 255, 0.5);
+  outline: 0;
+  border: 0;
+}
+
+#nav ul li a span {
+  position: relative;
+  display: block;
+  font-size: 0.8em;
+}
+
+#nav ul li a span:before {
+  position: absolute;
+  left: 0;
+  color: #41484c;
+  text-align: center;
+  width: 1.25em;
+  line-height: 1.75em;
+}
+
+#nav ul li a.active {
+  background: rgba(0, 0, 0, 0.15);
+  color: #fff;
+}
+
+#nav ul li a.active span:before {
+  color: #e27689;
+}
+
+/* Main */
+
+#main {
+  margin-left: 375px;
+}
+
+#main > section {
+  margin: 0;
+  overflow: hidden;
+  padding: 4em 0;
+  box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
+  text-align: center;
+}
+
+#main > section.cover strong {
+  color: #fff;
+  border-color: inherit;
+}
+
+#main > section.cover a {
+  color: #fff;
+  border-color: inherit;
+}
+
+#main > section.cover {
+  padding: 6em 0;
+  background-size: cover;
+  background-position: center center;
+}
+
+#main > section.cover {
+  background-color: #81918E;
+  background-image: url("../../images/canada.jpg");
+}
+
+#main > section.map {
+  background-color: #f5fafa;
+}
+
+/* Adjusting View based on size */
+
+/*Wide*/
+@media screen and (min-width: 961px) and (max-width: 1880px) {
+  body, input, textarea, select {
+    font-size: 17pt;
+  }
+
+  #header {
+    width: 300px;
+  }
+
+  #main {
+    margin-left: 300px;
+  }
+}
+
+/*Normal*/
+@media screen and (min-width: 961px) and (max-width: 1620px) {
+  #main > section {
+    padding: 1em 0;
+  }
+
+  #main section.cover {
+    padding: 1em 0;
+  }
+}
+
+/*Narrow*/
+@media screen and (min-width: 961px) and (max-width: 1320px) {
+  body, input, textarea, select {
+    font-size: 16pt;
+  }
+
+  .content {
+    padding: 0 2em 0 2em;
+  }
+
+  #header {
+    width: 20%;
+  }
+
+  #logo .image {
+    position: relative;
+    margin: 0 0 0.5em 0;
+  }
+
+  #nav ul li a {
+    font-size: 0.8em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+
+    #nav ul li a span {
+      font-size: 1em;
+      padding-right: 0;
+    }
+
+      #nav ul li a span:before {
+        left: 100%;
+        margin-left: -1.25em;
+        line-height: 2.25em;
+      }
+
+  #main {
+    margin-left: 20%;
+  }
+}
+
+/*Very Narrow*/
+#headerToggle {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  html, body {
+    overflow-x: hidden;
+    font-size: 16pt;
+  }
+
+  .content {
+    padding: 0 2em 0 2em;
+  }
+
+/* Toggle Menu */
+  #header {
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-transform: translateX(-275px);
+    -webkit-transform: translateX(-275px);
+    -ms-transform: translateX(-275px);
+    transform: translateX(-275px);
+    -moz-transition: -moz-transform 0.5s ease;
+    -webkit-transition: -webkit-transform 0.5s ease;
+    -ms-transition: -ms-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    -webkit-overflow-scrolling: touch;
+    display: block;
+    height: 100%;
+    left: 0;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    width: 275px;
+    z-index: 10002;
+    width: 275px;
+    background: #213029;
+    box-shadow: inset -0.25em 0 0.25em 0 rgba(0, 0, 0, 0.125);
+  }
+
+  #header .top {
+    position: relative;
+  }
+
+  #header .bottom {
+    border-top: solid 1px rgba(255, 255, 255, 0.05);
+    box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.15);
+    padding-top: 2em;
+    margin-top: 2em;
+    position: relative;
+  }
+
+  #logo {
+    margin: 1.5em 1.25em 1.25em 1.25em;
+  }
+
+  #nav ul li a {
+    padding: 0.5em 1.25em 0.5em 1.25em;
+  }
+
+  #headerToggle {
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-transition: -moz-transform 0.5s ease;
+    -webkit-transition: -webkit-transform 0.5s ease;
+    -ms-transition: -ms-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    display: block;
+    height: 2.25em;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 3.25em;
+    z-index: 10001;
+  }
+
+  #headerToggle .toggle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    outline: 0;
+    border: 0;
+  }
+
+  #headerToggle .toggle:before {
+    font-family: FontAwesome;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: '\f0c9';
+    color: #fff;
+    font-size: 18px;
+    line-height: 2.25em;
+    background: rgba(128, 136, 144, 0.5);
+    border-radius: 0.35em;
+    text-align: center;
+    position: absolute;
+    left: 0.5em;
+    top: 0.5em;
+    display: block;
+    width: 3.25em;
+    height: 2.25em;
+    line-height: 2.25em;
+  }
+
+  body.header-visible #main {
+    -moz-transform: translateX(275px);
+    -webkit-transform: translateX(275px);
+    -ms-transform: translateX(275px);
+    transform: translateX(275px);
+  }
+
+  body.header-visible #headerToggle {
+    -moz-transform: translateX(275px);
+    -webkit-transform: translateX(275px);
+    -ms-transform: translateX(275px);
+    transform: translateX(275px);
+  }
+
+  body.header-visible #header {
+    -moz-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  #main {
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-transition: -moz-transform 0.5s ease;
+    -webkit-transition: -webkit-transform 0.5s ease;
+    -ms-transition: -ms-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    padding-bottom: 1px;
+    margin-left: 0;
+  }
+
+  #main > section {
+    padding: 1em 0;
+  }
+
+  #main section.cover {
+    padding: 1em 0;
+  }
+}
+
+/* Mobile Sizing */
+
+@media screen and (max-width: 736px) {
+
+	body {
+		font-size: 14pt;
+	}
+
+	h2 {
+		font-size: 1.5em;
+		letter-spacing: 0;
+		font-weight: 300;
+	}
+
+	.content {
+		padding: 0 15px 0 15px;
+	}
+
+	#main > section {
+		padding: 2em 0;
+	}
+
+	#main section.cover {
+		padding: 1em 0em;
+	}
+
+	#main section.cover header {
+		padding: 0 1em;
+	}
+}
