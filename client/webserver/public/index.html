@@ -1,19 +1,59 @@
 <html>
 <head>
-	
-	<script src="/js/jquery.min.js"></script>
-	
-	<script src="/js/angular.min.js"></script>
-	
-	<script src="/js/bootstrap.min.js"></script>
-	
-	<script src="/js/main.js"></script>
-	
+	<title>CanMap</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="source/bootstrap-3.3.7-dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="source/app/css/index.css" />
 	<!--script src="/data/mapofcanada.json"></script-->
-	
 	<link rel="icon" href="/img/favicon.ico" sizes="16x16 32x32 48x48 64x64 128x128 256x256">
 </head>
 <body>
-CanMap Homepage
+	<!-- Main -->
+	<div id="main">
+
+		<!-- Title -->
+			<section id="top" class="cover">
+				<div class="content">
+
+					<header>
+						<h2><strong>CanMap</strong></h2>
+					</header>
+
+				</div>
+			</section>
+
+		<!-- Content -->
+			<section class="map">
+				<div class="content">
+					<header>
+						<h3 class="maptitle"><b>Map Name</b></h3>
+						<div class="dropdown options">
+							<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Dataset
+							<span class="caret"></span></button>
+							<ul class="dropdown-menu">
+								<li><a href="#">First Dataset</a></li>
+								<li><a href="#">Second Dataset</a></li>
+								<li><a href="#">Third Dataset</a></li>
+							</ul>
+						</div>
+					</header>
+					<br /><br /><br /><br />
+					<div id="container">
+
+          </div>
+
+				</div>
+			</section>
+	</div>
+
+	<!-- Scripts -->
+	<script src="../../client/lib/highmaps/code/highmaps.js"></script>
+  <script src="source/app/js/jquery.min.js"></script>
+  <script src="source/app/js/jquery.scrolly.min.js"></script>
+  <script src="source/app/js/jquery.scrollzer.min.js"></script>
+  <script src="source/app/js/skel.min.js"></script>
+  <script src="source/app/js/util.js"></script>
+  <script src="source/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 </body>
 </html>
