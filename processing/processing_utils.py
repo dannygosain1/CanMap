@@ -1,3 +1,4 @@
+import csv
 def filter_list_by_regex(regex, unfiltered_list):
     return list(filter(regex.match, unfiltered_list))
 

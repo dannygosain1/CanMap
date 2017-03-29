@@ -42,21 +42,19 @@ def parse_args():
     """
     parser = argparse.ArgumentParser(description='Map column names to data set names for API')
     parser.add_argument('--yaml', help="location to create/update the yaml config", required=True)
-    parser.add_argument('--table', help="name of new table to update the yaml with", required=True)
     return parser.parse_args()
 
-def main():
+def run(args):
     db = MySQLdb.connect(
         host="localhost", port=3306, user=os.environ['CANMAP_DB_USER'], passwd=os.environ['CANMAP_DB_PASS'],
         db=os.environ['CANMAP_DB_NAME']
     )
     cursor = db.cursor()
-    args = parse_args()
     cursor.execute(processing_utils.get_tables())
     tables_list = get_tables_list(cursor.fetchall())
     aggregated_datasets = {}
     for table in tables_list:
-        describe_table_statement = processing_utils.describe_table(args.table)
+        describe_table_statement = processing_utils.describe_table(table)
         cursor.execute(describe_table_statement)
         table_description_data = cursor.fetchall()
         table_columns = get_columns(table_description_data);
@@ -68,6 +66,11 @@ def main():
     db.close()
     print(aggregated_datasets)
     create_api_dataset_list(args.yaml, aggregated_datasets)
+
+
+def main():
+    args = parse_args()
+    run(args)
 
 if __name__ == "__main__":
     main()

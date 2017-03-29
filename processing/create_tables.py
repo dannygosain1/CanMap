@@ -14,13 +14,12 @@ def parse_args():
 	parser.add_argument('--csv', help="location of the csv file", required=True)
 	return parser.parse_args()
 
-def main():
+def run(args):
 	db = MySQLdb.connect(
 		host="localhost", port=3306, user=os.environ['CANMAP_DB_USER'], passwd=os.environ['CANMAP_DB_PASS'],
 		db=os.environ['CANMAP_DB_NAME']
 	)
 	cursor = db.cursor()
-	args = parse_args()
 	data_rows = processing_utils.read_csv_data(args.csv)
 
 	#gets the csv name without the extension from the path to the file provided
@@ -35,5 +34,9 @@ def main():
 	cursor.close()
 	db.close()
 
+def main():
+	args = parse_args()
+	run(args)
+	
 if __name__ == "__main__":
     main()
