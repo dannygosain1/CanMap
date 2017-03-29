@@ -14,14 +14,19 @@
     "End",
     "UI"
   ],
-  "author": "",
+  "author": "Cory Welch",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.6.3",
+    "body-parser": "^1.17.1",
+    "bootstrap": "^3.3.7",
     "express": "^4.15.0",
     "fs": "0.0.1-security",
     "http": "0.0.0",
     "https": "^1.0.0",
+    "jquery": "^3.2.1",
     "path": "^0.12.7",
+    "serve-favicon": "^2.4.2",
     "url": "^0.11.0"
   }
 }
