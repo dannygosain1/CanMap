@@ -3,10 +3,14 @@ app.controller("renderCtrl", function($scope, $http) {
 
     $scope.renderMap = function() {
 <<<<<<< HEAD
+<<<<<<< HEAD
         return $http.get("http://7ca07d79.ngrok.io/canada/"+$scope.datasetName+"/sum")
 =======
         return $http.get("http://a249d577.ngrok.io/canada/"+$scope.datasetName+"/sum")
 >>>>>>> Adding Controllers
+=======
+        return $http.get("http://50a90602.ngrok.io/canada/"+$scope.datasetName+"/sum")
+>>>>>>> fixing controller issue, updating api url
             .then(function(response) {
                 var data = response.data;
                 $http.get('/maps/canada.geo.json')
@@ -66,6 +70,7 @@ app.controller("renderCtrl", function($scope, $http) {
             })
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     $http.get("http://7ca07d79.ngrok.io/datasets")
     .then(function(response){
         $scope.datasets = response.data;
@@ -78,6 +83,9 @@ app.controller("renderCtrl", function($scope, $http) {
         $("#spinner").show();
 =======
     $http.get("http://a249d577.ngrok.io/datasets")
+=======
+    $http.get("http://50a90602.ngrok.io/datasets")
+>>>>>>> fixing controller issue, updating api url
     .then(function(response){
         $scope.datasets = response.data;
         $scope.selectedDataset = $scope.datasets[0];
