@@ -1,11 +1,11 @@
-/* 
+/*
  * CanMap Web Server
  * Node
  *
  * For SYDE 322
  * University of Waterloo
  * Department of Systems Design Engineering
- * 
+ *
  * Danny Gossain
  * Raunaq Suri
  * Cory Welch
@@ -45,27 +45,18 @@ app.use('/css', express.static(PATH.join(__dirname, '/node_modules/angular'))); 
 
 app.use('/maps',express.static(PATH.join(__dirname, '/maps')));
 
-var FAVICON = require('serve-favicon');
-app.use(FAVICON(PATH.join(__dirname,'public','img','favicon.ico')));
-
 /*---------------------*
 **-  Global Functions  -
 **---------------------*/
 //Function to start all processes, load all data, establish inital connections etc. Last step is to listen on the designated port
 function serverStartup() {
 	//PUT ANY STARTUP PROCEDURES HERE!
-	
+
     setTimeout(function () {
         console.log('All Startup Procedues Done');
         server.listen(PORT);
         console.log("Listening on port "+PORT);
     }, 1000); //Increase time as necessary
-}
-
-Date.prototype.addDays = function(days) { //http://stackoverflow.com/questions/563406/add-days-to-javascript-date
-  var dat = new Date(this.valueOf());
-  dat.setDate(dat.getDate() + days);
-  return dat;
 }
 
 /*------------*
@@ -75,7 +66,17 @@ Date.prototype.addDays = function(days) { //http://stackoverflow.com/questions/5
 var root = express.Router();
 
 root.get('/', function (req, res) {
-    res.sendFile(PATH.join(__dirname,'public','index.html'));  
+    res.sendFile(PATH.join(__dirname,'public','index.html'));
+});
+
+root.get('/config/:file', function(req, res){
+    FS.readFile(PATH.join(__dirname,'config',req.params.file),'utf-8',function(err, data){
+        if(err){
+            res.send(err);
+        }
+        //console.log(data);
+        res.json(JSON.parse(data));
+    });
 });
 
 root.get('/config/:file', function(req, res){
@@ -95,5 +96,3 @@ root.get('/config/:file', function(req, res){
 app.use('/',root);
 
 serverStartup();
-
-
