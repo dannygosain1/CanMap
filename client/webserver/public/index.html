@@ -3,13 +3,13 @@
 	<title>CanMap</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-    
+
 	<link rel="stylesheet" href="/css/bootstrap.css" />
 	<link rel="stylesheet" href="/css/index.css" />
 
 	<link rel="icon" href="/img/favicon.ico" sizes="16x16 32x32 48x48 64x64 128x128 256x256">
 </head>
-<body ng-app="dropdownList">
+<body ng-app="canMap">
 
 	<!-- Main -->
 	<div id="main">
@@ -17,11 +17,9 @@
 		<!-- Title -->
 			<section id="top" class="cover">
 				<div class="content">
-
 					<header>
 						<h2><strong>CanMap</strong></h2>
 					</header>
-
 				</div>
 			</section>
 
@@ -39,9 +37,8 @@
 						 -->
 
 						<div class="dropdown options" ng-controller="myCtrl">
-							<ul>
-								<li ng-repeat="x in products"><a href="#">{{x}}</a></li>
-							</ul>
+							<h4>Select Dataset:</h4>
+							<select ng-model="selectedName" ng-init="selectedName=datasets[0]" ng-options="x for x in datasets"></select>
 						</div>
 					</header>
 					<br />
