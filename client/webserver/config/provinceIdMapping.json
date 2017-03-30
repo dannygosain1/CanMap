@@ -1,77 +1,97 @@
 {
     "name": "idMappings",
     "lang": "English",
-    "data": [
-        {
+    "data": {
+        "1" : {
             "name": "Canada",
             "abbr": "CA",
             "type": "Country",
             "id": 1
-        },{
+        },
+        "48": {
             "name": "Alberta",
             "abbr": "AB",
             "type": "Province",
             "id": 48
-        },{
+        },
+        "59": {
             "name": "British Columbia",
             "abbr": "BC",
             "type": "Province",
             "id": 59
-        },{
+        },
+        "46": {
             "name": "Manitoba",
             "abbr": "MB",
             "type": "Province",
             "id": 46
-        },{
+        },
+
+        "13": {
             "name": "New Brunswick",
             "abbr": "NB",
             "type": "Province",
             "id": 13
-        },{
+        },
+        "10": {
             "name": "Newfoundland and Labrador",
             "abbr": "NL",
             "type": "Province",
             "id": 10
-        },{
+        },
+        "61": {
             "name": "Northwest Territories",
             "abbr": "NT",
             "type": "Province",
             "id": 61
-        },{
+        },
+
+        "12": {
             "name": "Nova Scotia",
             "abbr": "NS",
             "type": "Province",
             "id": 12
-        },{
+        },
+
+        "62": {
             "name": "Nunavut",
             "abbr": "NU",
             "type": "Province",
             "id": 62
-        },{
+        },
+
+        "35": {
             "name": "Ontario",
             "abbr": "ON",
             "type": "Province",
             "id": 35
-        },{
+        },
+        "11": {
             "name": "Prince Edward Island",
             "abbr": "PE",
             "type": "Province",
             "id": 11
-        },{
+        },
+
+        "24": {
             "name": "Quebec",
             "abbr": "QC",
             "type": "Province",
             "id": 24
-        },{
+        },
+
+        "47": {
             "name": "Saskatchewan",
             "abbr": "SK",
             "type": "Province",
             "id": 47
-        },{
+        },
+
+        "60": {
             "name": "Yukon",
             "abbr": "YT",
             "type": "Province",
             "id": 60
         }
-    ]
+    }
 }
