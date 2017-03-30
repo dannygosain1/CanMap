@@ -273,6 +273,8 @@ header {
 @media screen and (min-width: 961px) and (max-width: 1880px) {
   body, input, textarea, select {
     font-size: 17pt;
+    display: inline !important;
+    float:left;
   }
 
   #container {
@@ -316,6 +318,7 @@ header {
 @media screen and (min-width: 961px) and (max-width: 1320px) {
   body, input, textarea, select {
     font-size: 16pt;
+    display: inline !important;
   }
 
   /* Load Map */

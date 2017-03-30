@@ -27,18 +27,13 @@
 			<section class="map">
 				<div class="content">
 					<header>
-
-						<!--
-						<div ng-app="myShoppingList" ng-controller="myCtrl">
-						  <ul>
-						    <li ng-repeat="x in products">{{x}}</li>
-						  </ul>
-						</div>
-						 -->
-
-						<div class="dropdown options" ng-controller="myCtrl">
+						<div class="dropdown options" ng-controller="getMap">
 							<h4>Select Dataset:</h4>
-							<select ng-model="selectedName" ng-init="selectedName=datasets[0]" ng-options="x for x in datasets"></select>
+							<select class="form-control" style="display:inline; width:10em">
+								<option ng-repeat="x in datasets">
+									{{x}}
+								</option>
+							</select>
 						</div>
 					</header>
 					<br />

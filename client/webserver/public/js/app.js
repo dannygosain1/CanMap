@@ -1,13 +1,7 @@
 var app = angular.module("canMap", []);
-app.controller("myCtrl", function($scope) {
-    $scope.datasets = ["Dataset1", "Dataset2", "Dataset3"];
+app.controller("getMap", function($scope, $http) {
+    $http.get("http://006c9aca.ngrok.io/datasets")
+    .then(function(response){
+        $scope.datasets = response.data;
+    });
 });
-
-// <script>
-// var app = angular.module('myApp', []);
-// app.controller('myCtrl', function($scope) {
-//     $scope.names = ["Emil", "Tobias", "Linus"];
-// });
-// </script>
-//
-// <p>This example shows how to fill a dropdown list using the ng-options directive.</p>

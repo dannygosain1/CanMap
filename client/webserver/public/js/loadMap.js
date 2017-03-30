@@ -1,5 +1,7 @@
 function load_map(geojson) {
   // Initiate the chart
+    var data = [];
+
     Highcharts.mapChart('container', {
         title: {
             text: 'Sample Title'
@@ -16,10 +18,24 @@ function load_map(geojson) {
         }],
         credits: {
             enabled: false
+        },
+        chart: {
+            backgroundColor:'rgba(255, 255, 255, 0.1)'
+        },
+        exporting: {
+            enabled: false
         }
     });
 
 }
-$(document).ready(function() {
-    $.getJSON('/data/canada.geo.json', load_map);
-});
+
+function getFileName(file) {
+    $.getJSON(file, load_map);
+}
+
+$(document).ready(getFileName('/data/canada.geo.json'));
+
+
+// $(document).ready(function() {
+//     $.getJSON('/data/canada.geo.json', load_map);
+// });
