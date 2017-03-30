@@ -27,6 +27,9 @@ def get_dataset_list(table_columns):
     return processing_utils.filter_list_by_regex(regex, table_columns)
 
 def get_tables_list(tables):
+    """
+    Gets a list of tables from the describe query
+    """
     return processing_utils.get_column_values(0, tables)
 
 def get_columns(table_description_data):
