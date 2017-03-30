@@ -1,8 +1,8 @@
 
-app.controller("renderCtrl", function($scope, $http) {
+app.controller("renderCtrl", function($scope, $rootScope, $http) {
 
     $scope.renderMap = function() {
-        return $http.get("http://50a90602.ngrok.io/canada/"+$scope.datasetName+"/sum")
+        return $http.get($rootScope.apiURL+"/canada/"+$scope.datasetName+"/sum")
             .then(function(response) {
                 var data = response.data;
                 $http.get('/maps/canada.geo.json')
