@@ -14,8 +14,14 @@ function load_map(geojson) {
         },
         series: [{
             name: 'Sample Data',
+            data: data,
             mapData: geojson,
         }],
+
+        colorAxis: {
+           tickPixelInterval: 100
+        },
+
         credits: {
             enabled: false
         },

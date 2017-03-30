@@ -25,19 +25,17 @@
 
 		<!-- Content -->
 			<section class="map">
-				<div class="content">
+				<div class="content" ng-controller="getMap">
 					<header>
-						<div class="dropdown options" ng-controller="getMap">
+						<div class="dropdown options">
 							<h4>Select Dataset:</h4>
-							<select class="form-control" style="display:inline; width:10em">
-								<option ng-repeat="x in datasets">
-									{{x}}
-								</option>
+							<select ng-change="update()" ng-options="x for x in datasets" ng-model="selectedDataset" class="form-control" style="display:inline; width:10em">
 							</select>
 						</div>
 					</header>
 					<br />
-					<div id="container" ng-controller="renderMap"></div>
+					<div id="container"></div>
+				</div>
 
 			</section>
 	</div>
