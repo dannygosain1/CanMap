@@ -1,0 +1,41 @@
+<html>
+<head>
+	
+	<link rel="icon" href="/img/favicon.ico" sizes="16x16 32x32 48x48 64x64 128x128 256x256">
+	
+</head>
+<body>
+    
+	<h1>Dynamic URL Creation Testing Page</h1>
+    
+    <div id='provs'>
+    	<p>Provinces</p>
+        <button type="button" onclick="provClicked(1)">ON</button>
+        <button type="button" onclick="provClicked(2)">QC</button>
+        <button type="button" onclick="provClicked(3)">BC</button>
+        <button type="button" onclick="provClicked(4)">NS</button>
+        <button type="button" onclick="provClicked(5)">YK</button>
+    </div>
+    
+    <div id='areas' style='display: none;'>
+        <p>Area</p>
+    	<button type="button" onclick="areaClicked(1)">Area 1</button>
+        <button type="button" onclick="areaClicked(2)">Area 2</button>
+        <button type="button" onclick="areaClicked(3)">Area 3</button>
+        <button type="button" onclick="areaClicked(4)">Area 4</button>
+        <button type="button" onclick="areaClicked(5)">Area 5</button>
+    </div>
+	
+	<br>
+	
+	<p id="pathText"></p>
+    
+    <!-- Scripts -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/CanMapUtils.js"></script>
+    
+	<script src="/js/dynamicURL.js"></script>
+    
+    
+</body>
+</html>
