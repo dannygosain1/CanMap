@@ -43,7 +43,7 @@ app.use('/css', express.static(PATH.join(__dirname, '/node_modules/bootstrap/dis
 app.use('/js', express.static(PATH.join(__dirname, '/node_modules/angular'))); // redirect for Angular JS
 app.use('/css', express.static(PATH.join(__dirname, '/node_modules/angular'))); // redirect for Angular JS
 
-app.use('/maps',express.static(PATH.join(__dirname, '/log')));
+app.use('/maps',express.static(PATH.join(__dirname, '/maps')));
 
 var FAVICON = require('serve-favicon');
 app.use(FAVICON(PATH.join(__dirname,'public','img','favicon.ico')));
