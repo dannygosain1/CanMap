@@ -33,7 +33,7 @@ function getFileName(file) {
     $.getJSON(file, load_map);
 }
 
-$(document).ready(getFileName('/data/canada.geo.json'));
+$(document).ready(getFileName('/maps/canada.geo.json'));
 
 
 // $(document).ready(function() {
