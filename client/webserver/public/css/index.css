@@ -254,7 +254,7 @@ header {
 
 #main > section.cover {
   background-color: #81918E;
-  background-image: url("../../../images/canada.jpg");
+  background-image: url("/img/canada.jpg");
 }
 
 #main > section.map {
