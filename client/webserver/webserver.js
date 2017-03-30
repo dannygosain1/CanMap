@@ -45,9 +45,6 @@ app.use('/css', express.static(PATH.join(__dirname, '/node_modules/angular'))); 
 
 app.use('/maps',express.static(PATH.join(__dirname, '/maps')));
 
-var FAVICON = require('serve-favicon');
-app.use(FAVICON(PATH.join(__dirname,'public','img','favicon.ico')));
-
 /*---------------------*
 **-  Global Functions  -
 **---------------------*/
@@ -60,12 +57,6 @@ function serverStartup() {
         server.listen(PORT);
         console.log("Listening on port "+PORT);
     }, 1000); //Increase time as necessary
-}
-
-Date.prototype.addDays = function(days) { //http://stackoverflow.com/questions/563406/add-days-to-javascript-date
-  var dat = new Date(this.valueOf());
-  dat.setDate(dat.getDate() + days);
-  return dat;
 }
 
 /*------------*
