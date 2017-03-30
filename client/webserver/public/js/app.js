@@ -3,7 +3,7 @@ var app = angular.module("canMap", []);
 app.controller("getMap", function($scope, $http) {
 
     $scope.renderMap = function() {
-        return $http.get("http://006c9aca.ngrok.io/canada/"+$scope.datasetName+"/sum")
+        return $http.get("http://a249d577.ngrok.io/canada/"+$scope.datasetName+"/sum")
             .then(function(response) {
                 var data = response.data;
                 $http.get('/maps/canada.geo.json')
@@ -39,7 +39,7 @@ app.controller("getMap", function($scope, $http) {
                     })
             })
     }
-    $http.get("http://006c9aca.ngrok.io/datasets")
+    $http.get("http://a249d577.ngrok.io/datasets")
     .then(function(response){
         $scope.datasets = response.data;
         $scope.selectedDataset = $scope.datasets[0];

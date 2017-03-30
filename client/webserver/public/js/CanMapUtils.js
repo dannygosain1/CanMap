@@ -32,4 +32,9 @@ Date.prototype.addDays = function(days) { //http://stackoverflow.com/questions/5
   return dat;
 }
 
+//Function that makes config requests, then executes the supplied callback
+function getConfig(file,callback){
+    $.getJSON('/config/'+file, callback);
+}
+
 

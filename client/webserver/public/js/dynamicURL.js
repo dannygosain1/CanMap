@@ -17,6 +17,7 @@ url_params = {}; //Important to note that whatever the keys are in here, will be
 $(document).ready(function(){
     //console.log('$(document).ready Called');
     loadPage();
+    renderPage();
 });
 
 // Allows us to handle when the back button is entered and rerender to previous URL
@@ -87,36 +88,45 @@ function paramsFromURL(){
 }
 
 // Function to update params when prov is clicked
-function provClicked(id){
-    if(isNaN(id) || id < 0){
-        console.log('Invalid Call of provClicked given id='+id);
-        return;
+// DEFAULT FUNCTION
+if(typeof(provClicked != 'function')){
+    window.provClicked = function(id){
+        if(isNaN(id) || id < 0){
+            console.log('Invalid Call of provClicked given id='+id);
+            return;
+        }
+        
+        url_params.p = id;
+        url_params.a = 0;
+        
+        updateURL();
     }
-    
-    url_params.p = id;
-    url_params.a = 0;
-    
-    updateURL();
 }
 
 // Function to update params when area is clicked
-function areaClicked(id){
-    if(isNaN(id) || id < 0){
-        console.log('Invalid Call of areaClicked given id='+id);
-        return;
+//DEFAULT FUNCTION
+if(typeof(areaClicked != 'function')){
+    window.areaClicked = function(id){
+        if(isNaN(id) || id < 0){
+            console.log('Invalid Call of areaClicked given id='+id);
+            return;
+        }
+        
+        url_params.a = id;
+        
+        updateURL();
     }
-    
-    url_params.a = id;
-    
-    updateURL();
 }
 
 // Uses Global Params Variable to render page.
-function renderPage(){
-    
-    if(url_params.p == 0){
-        $('#areas').hide();
-    } else {
-        $('#areas').show();
+//DEFAULT FUNCTION
+if(typeof(renderPage) != 'function')){
+    window.renderPage = function(){
+        if(url_params.p == 0){
+            $('#areas').hide();
+        } else {
+            $('#areas').show();
+        }
     }
 }
+
