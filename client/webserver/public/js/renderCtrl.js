@@ -1,8 +1,8 @@
 
-app.controller("renderCtrl", function($scope, $rootScope, $http) {
+app.controller("renderCtrl", function($scope, $http) {
 
     $scope.renderMap = function() {
-        return $http.get($rootScope.apiURL+"/canada/"+$scope.datasetName+"/sum")
+        return $http.get("http://a249d577.ngrok.io/canada/"+$scope.datasetName+"/sum")
             .then(function(response) {
                 var data = response.data;
                 $http.get('/maps/canada.geo.json')
@@ -35,7 +35,7 @@ app.controller("renderCtrl", function($scope, $rootScope, $http) {
                                 enabled: false
                             },
                             chart: {
-                                backgroundColor:'rgba(255, 255, 255, 0.1)',
+                                backgroundColor:'rgba(255, 255, 255, 0.1)'
                             },
                             exporting: {
                                 enabled: false

@@ -1,3 +1,4 @@
+
 apiURL = "";
 
 app.controller("configCtrl", function($scope, $http) {
@@ -7,4 +8,5 @@ app.controller("configCtrl", function($scope, $http) {
         });
     }
 });
+
 
