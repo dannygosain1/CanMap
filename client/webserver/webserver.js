@@ -1,11 +1,11 @@
-/* 
+/*
  * CanMap Web Server
  * Node
  *
  * For SYDE 322
  * University of Waterloo
  * Department of Systems Design Engineering
- * 
+ *
  * Danny Gossain
  * Raunaq Suri
  * Cory Welch
@@ -54,7 +54,7 @@ app.use(FAVICON(PATH.join(__dirname,'public','img','favicon.ico')));
 //Function to start all processes, load all data, establish inital connections etc. Last step is to listen on the designated port
 function serverStartup() {
 	//PUT ANY STARTUP PROCEDURES HERE!
-	
+
     setTimeout(function () {
         console.log('All Startup Procedues Done');
         server.listen(PORT);
@@ -75,7 +75,7 @@ Date.prototype.addDays = function(days) { //http://stackoverflow.com/questions/5
 var root = express.Router();
 
 root.get('/', function (req, res) {
-    res.sendFile(PATH.join(__dirname,'public','index.html'));  
+    res.sendFile(PATH.join(__dirname,'public','index.html'));
 });
 
 root.get('/config/:file', function(req, res){
@@ -95,5 +95,3 @@ root.get('/config/:file', function(req, res){
 app.use('/',root);
 
 serverStartup();
-
-
