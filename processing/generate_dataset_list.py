@@ -64,7 +64,6 @@ def run(args):
     db.commit()
     cursor.close()
     db.close()
-    print(aggregated_datasets)
     create_api_dataset_list(args.yaml, aggregated_datasets)
 
 
