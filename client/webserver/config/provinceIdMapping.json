@@ -71,7 +71,7 @@
             name: 'Yukon',
             abbr: 'YT',
             type: 'Province',
-            id: 48
+            id: 60
         },
     ]
 }
