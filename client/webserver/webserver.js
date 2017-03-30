@@ -74,7 +74,7 @@ root.get('/config/:file', function(req, res){
         if(err){
             res.send(err);
         }
-        console.log(data);
+        //console.log(data);
         res.json(JSON.parse(data));
     });
 });
