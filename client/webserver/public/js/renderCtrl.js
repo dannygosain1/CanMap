@@ -2,7 +2,7 @@
 app.controller("renderCtrl", function($scope, $http) {
 
     $scope.renderMap = function() {
-        return $http.get("http://a249d577.ngrok.io/canada/"+$scope.datasetName+"/sum")
+        return $http.get("http://50a90602.ngrok.io/canada/"+$scope.datasetName+"/sum")
             .then(function(response) {
                 var data = response.data;
                 $http.get('/maps/canada.geo.json')
@@ -38,7 +38,7 @@ app.controller("renderCtrl", function($scope, $http) {
                     })
             })
     }
-    $http.get("http://a249d577.ngrok.io/datasets")
+    $http.get("http://50a90602.ngrok.io/datasets")
     .then(function(response){
         $scope.datasets = response.data;
         $scope.selectedDataset = $scope.datasets[0];
