@@ -3,7 +3,7 @@ def filter_list_by_regex(regex, unfiltered_list):
     return list(filter(regex.match, unfiltered_list))
 
 def get_column_values(columnIndex: int, table_data):
-    values = list(map(lambda row: row[0], table_data))
+    values = list(map(lambda row: row[columnIndex], table_data))
     return values
 
 def get_tables():
