@@ -22,7 +22,9 @@ const URL = require('url'); // Url
 const HTTP = require('http'); // HTTP for requests
 const HTTPS = require('https'); // HTTPS for future secure requests
 
+/* //Uncomment if POST requests needed
 const BODYPARSER = require('body-parser'); // Body Parser for Post Requests
+*/
 
 const express = require('express'); // Express for Web Application
 
@@ -45,13 +47,14 @@ app.use('/css', express.static(PATH.join(__dirname, '/node_modules/bootstrap/dis
 app.use('/js', express.static(PATH.join(__dirname, '/node_modules/angular'))); // redirect for Angular JS
 app.use('/css', express.static(PATH.join(__dirname, '/node_modules/angular'))); // redirect for Angular JS
 
+/* //Uncomment if POST requests needed
 app.use(BODYPARSER.json() );       // to support JSON-encoded bodies
 app.use(BODYPARSER.urlencoded({     // to support URL-encoded bodies
   extended: false
-})); 
+})); */
 
 var FAVICON = require('serve-favicon');
-app.use(FAVICON(PATH.join(__dirname,'public','favicon.ico')));
+app.use(FAVICON(PATH.join(__dirname,'public','img','favicon.ico')));
 
 /*---------------------*
 **-  Global Functions  -
