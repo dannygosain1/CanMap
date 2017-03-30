@@ -1,11 +1,11 @@
-/* 
+/*
  * CanMap Web Server
  * Node
  *
  * For SYDE 322
  * University of Waterloo
  * Department of Systems Design Engineering
- * 
+ *
  * Danny Gossain
  * Raunaq Suri
  * Cory Welch
@@ -51,7 +51,7 @@ app.use('/maps',express.static(PATH.join(__dirname, '/maps')));
 //Function to start all processes, load all data, establish inital connections etc. Last step is to listen on the designated port
 function serverStartup() {
 	//PUT ANY STARTUP PROCEDURES HERE!
-	
+
     setTimeout(function () {
         console.log('All Startup Procedues Done');
         server.listen(PORT);
@@ -66,7 +66,17 @@ function serverStartup() {
 var root = express.Router();
 
 root.get('/', function (req, res) {
-    res.sendFile(PATH.join(__dirname,'public','index.html'));  
+    res.sendFile(PATH.join(__dirname,'public','index.html'));
+});
+
+root.get('/config/:file', function(req, res){
+    FS.readFile(PATH.join(__dirname,'config',req.params.file),'utf-8',function(err, data){
+        if(err){
+            res.send(err);
+        }
+        //console.log(data);
+        res.json(JSON.parse(data));
+    });
 });
 
 /*-------------------*
@@ -76,5 +86,3 @@ root.get('/', function (req, res) {
 app.use('/',root);
 
 serverStartup();
-
-
