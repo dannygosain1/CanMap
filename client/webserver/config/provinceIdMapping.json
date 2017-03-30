@@ -1,0 +1,77 @@
+{
+    name: 'idMappings',
+    lang: 'English',
+    data: [
+        {
+            name: 'Canada',
+            abbr: 'CA',
+            type: 'Country',
+            id: 1
+        },{
+            name: 'Alberta',
+            abbr: 'AB',
+            type: 'Province',
+            id: 48
+        },{
+            name: 'British Columbia',
+            abbr: 'BC',
+            type: 'Province',
+            id: 59
+        },{
+            name: 'Manitoba',
+            abbr: 'MB',
+            type: 'Province',
+            id: 46
+        },{
+            name: 'New Brunswick',
+            abbr: 'NB',
+            type: 'Province',
+            id: 13
+        },{
+            name: 'Newfoundland and Labrador',
+            abbr: 'NL',
+            type: 'Province',
+            id: 10
+        },{
+            name: 'Northwest Territories',
+            abbr: 'NT',
+            type: 'Province',
+            id: 61
+        },{
+            name: 'Nova Scotia',
+            abbr: 'NS',
+            type: 'Province',
+            id: 12
+        },{
+            name: 'Nunavut',
+            abbr: 'NU',
+            type: 'Province',
+            id: 62
+        },{
+            name: 'Ontario',
+            abbr: 'ON',
+            type: 'Province',
+            id: 35
+        },{
+            name: 'Prince Edward Island',
+            abbr: 'PE',
+            type: 'Province',
+            id: 11
+        }{
+            name: 'Quebec',
+            abbr: 'QC',
+            type: 'Province',
+            id: 24
+        },{
+            name: 'Saskatchewan',
+            abbr: 'SK',
+            type: 'Province',
+            id: 47
+        }{
+            name: 'Yukon',
+            abbr: 'YT',
+            type: 'Province',
+            id: 48
+        },
+    ]
+}
