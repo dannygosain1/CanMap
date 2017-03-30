@@ -29,8 +29,8 @@ get '/datasets' do
   data.to_json
 end
 
-get '/canada/:dataset_name/:fcn' do
-  fcn = params['fcn']
+get '/canada/:dataset_name' do
+  fcn = params['fcn'] || "avg"
   dataset_name = params['dataset_name']
   table = dataset_list[dataset_name]
 
@@ -48,7 +48,7 @@ get '/canada/:dataset_name/:fcn' do
   dataset = dataset.group(:'hc-key')
   #convert to float for aggregate functions instead of BigDecimal
   data = dataset.all.each do |row|
-    row[:value] = row[:value].to_f
+    row[:value] = row[:value].to_f.round(2)
   end
   data.to_json
 
@@ -57,6 +57,9 @@ end
 get '/province/:map_id/:dataset_name' do
   dataset_name = params['dataset_name']
   map_id = params['map_id']
+  #redirects to canada if the province id is equal to 1
+  redirect('/canada/'+dataset_name) if map_id == "1"
+  
   table = dataset_list[dataset_name]
   dataset = DB.from(table)
               .where(:Provincial_geographic_Code => map_id)
