@@ -27,12 +27,12 @@ ol, ul {
 /* Content */
 
 body {
-  background: #fff;
+  background: #f5fafa;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 18pt;
   font-weight: 300;
   line-height: 1.75em;
-  color: #888888;
+  color: #888;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -264,6 +264,7 @@ header {
 .maptitle {
   float: left;
   text-align: left !important;
+  padding-left: 1em;
 }
 
 /* Adjusting View based on size */
@@ -272,6 +273,17 @@ header {
 @media screen and (min-width: 961px) and (max-width: 1880px) {
   body, input, textarea, select {
     font-size: 17pt;
+  }
+
+  #container {
+    height: 25em;
+  	width: 25em;
+    margin: 0 auto;
+  }
+  .loading {
+    margin-top: 10em;
+    text-align: center;
+    color: gray;
   }
 
 }
@@ -285,6 +297,19 @@ header {
   #main section.cover {
     padding: 1em 0;
   }
+
+  /* Load Map */
+
+  #container {
+    height: 25em;
+  	width: 25em;
+  	margin: 0 auto;
+  }
+  .loading {
+  	margin-top: 10em;
+  	text-align: center;
+  	color: gray;
+  }
 }
 
 /*Narrow*/
@@ -292,11 +317,24 @@ header {
   body, input, textarea, select {
     font-size: 16pt;
   }
+
+  /* Load Map */
+
+  #container {
+    height: 25em;
+  	width: 25em;
+  	margin: 0 auto;
+  }
+  .loading {
+  	margin-top: 10em;
+  	text-align: center;
+  	color: gray;
+  }
 }
 
 /*Very Narrow*/
 
-@media screen and (max-width: 960px) {
+@media screen and (min-width: 737px) and (max-width: 960px) {
   html, body {
     overflow-x: hidden;
     font-size: 16pt;
@@ -322,11 +360,24 @@ header {
   #main section.cover {
     padding: 1em 0;
   }
+
+  /* Load Map */
+
+  #container {
+    height: 25em;
+  	width: 25em;
+  	margin: 0 auto;
+  }
+  .loading {
+  	margin-top: 10em;
+  	text-align: center;
+  	color: gray;
+  }
 }
 
 /* Mobile Sizing */
 
-@media screen and (max-width: 736px) {
+@media screen and (max-width: 500px) {
 
 	body {
 		font-size: 14pt;
@@ -353,10 +404,22 @@ header {
 	#main section.cover header {
 		padding: 0 1em;
 	}
+
+  #container {
+    height: 18em;
+  	width: 18em;
+  	margin: 0 auto;
+  }
+
+  .loading {
+  	margin-top: 10em;
+  	text-align: center;
+  	color: gray;
+  }
 }
 
 /* Dropdown */
 .options {
-  float: right;
+  align-items: center;
   background-position: center center;
 }
