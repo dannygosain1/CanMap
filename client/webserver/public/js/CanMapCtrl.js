@@ -39,15 +39,18 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
                 $scope.url_params.p = val;
                 
             } else if(key == 'd'){
+                if(isNaN(val) || val < 0 || val > $scope.datasets.length){
+                    console.log('Invalid Dataset ID='+val);
+                    return; // = continue for forEach
+                }
                 
                 $scope.url_params.d = val.replace(" ","_");
                 
             }
         });
         
-        if(isInvalid($scope.url_params.p)){
-            $scope.url_params.p = 1;
-            $scope.url_params.d = $scope.selectedDatasetId;
+        if(isInvalid($scope.url_params.d)){
+            $scope.url_params.d = $scope.defaultSelectedDatasetId;
         }
         
         if(isInvalid($scope.url_params.p)){
@@ -89,7 +92,8 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
                 });
             }
             //Manipulate Dataset list if necessary here, for now start with pop 2016 = [1]
-            $scope.selectedDataset = $scope.datasets[1]; //OBJ!
+            $scope.defaultSelectedDatasetId = 1;
+            $scope.selectedDataset = $scope.datasets[$scope.defaultSelectedDatasetId]; //OBJ!
             
         });
     }
