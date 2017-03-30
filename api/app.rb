@@ -2,7 +2,6 @@ require 'sinatra'
 require 'json'
 require 'sequel'
 require 'yaml'
-require 'logger'
 require 'json'
 
 database_config = YAML.load_file('database.yaml')
@@ -16,6 +15,11 @@ DB = Sequel.connect(database_config["development"],
                    )
 
 before do
+  #http://stackoverflow.com/questions/17027117/jquery-ajax-request-to-sinatra-app-blocked-by-cors
+  headers['Access-Control-Allow-Origin'] = "*"
+  headers['Access-Control-Allow-Methods'] = "GET, OPTIONS"
+  headers['Access-Control-Allow-Headers'] ="accept, authorization, origin"
+  
   cache_control :public, :must_revalidate, :max_age => 60
   content_type 'application/json'
 end
