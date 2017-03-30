@@ -58,8 +58,8 @@ get '/province/:map_id/:dataset_name' do
   dataset_name = params['dataset_name']
   map_id = params['map_id']
   #redirects to canada if the province id is equal to 1
-  redirect('/canada/'+dataset_name) if map_id == "1"
-  
+  redirect('/canada/'+dataset_name + "?fcn=#{params['fcn']}") if map_id == "1"
+
   table = dataset_list[dataset_name]
   dataset = DB.from(table)
               .where(:Provincial_geographic_Code => map_id)
