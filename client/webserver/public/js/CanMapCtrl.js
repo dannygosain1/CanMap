@@ -31,8 +31,7 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
             var val = keyval[1];
 
             if(key == 'p'){
-
-                if(isNaN(val) || val < 0){
+                if(isNaN(val) || val < 0 || isInvalid($scope.provIdMapping[val])){
                     return; // = continue for forEach
                 }
 
