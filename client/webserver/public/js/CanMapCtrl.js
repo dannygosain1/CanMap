@@ -23,7 +23,6 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
     //PARAMETER MANIPULATION FUNCTIONS
     //jquery
     $scope.paramsFromURL = function(){
-        //console.log('paramsFromURL Called');
         $scope.url_params = {};
         var params = $(location).attr('search').replace('?','').split('&');
         params.forEach(function(param){
@@ -34,7 +33,6 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
             if(key == 'p'){
 
                 if(isNaN(val) || val < 0){
-                    console.log('Invalid ProvID='+val);
                     return; // = continue for forEach
                 }
 
@@ -42,7 +40,6 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
 
             } else if(key == 'd'){
                 if(isNaN(val) || val < 0 || val > $scope.datasets.length){
-                    console.log('Invalid Dataset ID='+val);
                     return; // = continue for forEach
                 }
 
@@ -58,6 +55,8 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
         if(isInvalid($scope.url_params.p)){
             $scope.url_params.p = 1;
         }
+
+        $scope.isProvince = !($scope.url_params.p == 1);
 
         return;
     }
@@ -167,7 +166,10 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
                                     }
                                 },
                                 tooltip: {
-                                    pointFormat: '{point.name}: <b>{point.value}</b>'
+                                    pointFormatter: function() {
+                                        key = isInvalid(this.name) ? this['hc-key'] : this.name;
+                                        return key + ": <b>" + this.value.toLocaleString() + "</b>"
+                                    }
                                 }
                             }],
                             legend: {
@@ -211,7 +213,6 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
 
     // need to switch to angular directive
     window.addEventListener('popstate', function(event) {
-        //console.log('window.addEventListener(popstate) Called');
         return $scope.loadPage();
     });
 
