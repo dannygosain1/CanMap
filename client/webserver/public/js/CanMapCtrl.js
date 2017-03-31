@@ -109,6 +109,8 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
                 var data = response.data;
                 return $http.get('/maps/canada.geo.json')
                     .then(function(result) {
+                        $("#spinner").hide();
+                        $('#container').show();
                         Highcharts.mapChart('container', {
                             title: {
                                 text: $scope.datasets[$scope.url_params.d].pretty_name
@@ -120,12 +122,16 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
                                 }
                             },
                             colorAxis: {
-                                tickPixelInterval: 100
+                                tickPixelInterval: 100,
+                                minColor:'#ffd1d1',
+                                maxColor:'#8c0202',
                             },
                             series: [{
-                                name: $scope.datasets[$scope.url_params.d].pretty_name,
+                                name: $scope.selectedDataset,
                                 data: data,
                                 mapData: result.data,
+                                borderColor: "#fff",
+                                borderWidth: 1,
                             }],
                             credits: {
                                 enabled: false
@@ -137,7 +143,7 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
                                 enabled: false
                             }
                         });
-                    })
+                    });
             })
 
     }
@@ -160,7 +166,6 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
     // need to switch to angular directive
     window.addEventListener('popstate', function(event) {
         //console.log('window.addEventListener(popstate) Called');
-        alert('test');
         return $scope.loadPage();
     });
     
