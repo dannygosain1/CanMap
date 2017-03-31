@@ -7,6 +7,7 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
    $scope.getApiURL = function(){
        return $http.get('/config/apiConfig.json').then(function(result){
             $scope.apiURL = result.data.apiURL;
+            $scope.apiFunc = result.data.fnc;
         });
     }
 
@@ -37,6 +38,7 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
                 }
 
                 $scope.url_params.p = val;
+                $scope.url_params.s = '';
 
             } else if(key == 'd'){
                 if(isNaN(val) || val < 0 || val > $scope.datasets.length){
@@ -44,6 +46,14 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
                 }
 
                 $scope.url_params.d = val.replace(" ","_");
+
+            } else if(key == 's'){
+                if(val != 'sum' && val != 'avg' && val != 'max' && val != 'min'    ){
+                    return; // = continue for forEach
+                }
+
+                $scope.url_params.s = val;
+                $scope.selectedFunc = $scope.apiFunc[$scope.url_params.s];
 
             }
         });
@@ -54,6 +64,11 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
 
         if(isInvalid($scope.url_params.p)){
             $scope.url_params.p = 1;
+        }
+        
+        if(isInvalid($scope.url_params.s)){
+            $scope.url_params.s = "avg";
+            $scope.selectedFunc = $scope.apiFunc[$scope.url_params.s];
         }
 
         $scope.isProvince = !($scope.url_params.p == 1);
@@ -70,6 +85,7 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
         }
 
         history.pushState({},'UpdatedURL',path);
+        $scope.isProvince = !($scope.url_params.p == 1);
         return $scope.renderPage();
     }
 
@@ -102,8 +118,14 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
         //Logic based on parameters
         $scope.shareUrl = $(location).attr('href');
         $scope.selectedDataset = $scope.datasets[$scope.url_params.d];
-        var detail = '';
-
+        $scope.selectedFunc = $scope.apiFunc[$scope.url_params.s];
+        var detail = $scope.selectedFunc.s;
+        if($scope.isProvince){
+            detail = '';
+            $("#functionSelect").hide();
+        } else {
+            $("#functionSelect").show();
+        }
         var dataUrl =  $scope.apiURL+"/province/" +
                         $scope.url_params.p+'/'+$scope.datasets[$scope.url_params.d].name+detail;
         return $http.get(dataUrl).then(response => {
@@ -136,6 +158,7 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
                                                 }
                                                 
                                                 $scope.url_params.p = this['hc-key'];
+                                                $scope.url_params.s = 'sum';
                                                 $('#container').hide();
                                                 $("#spinner").show();
                                                 $scope.updateURL()
@@ -167,7 +190,9 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
                                             var key = this.point.properties['hc-key'];
                                             if($scope.provIdMapping[key])
                                                 return $scope.provIdMapping[key].abbr;
-                                        } else if(this.point.properties && this.point.properties['CDNAME']) {
+                                        } else if(this.point.properties && this.point.properties['CDNAME'] && !$scope.isProvince) {
+                                            //What is this section for??
+                                            var key = this.point.properties['CDNAME'];
                                             return key.unCamelCase(" ");
                                         }
                                     }
@@ -215,6 +240,14 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
         $("#spinner").show();
         return $scope.updateURL();
     };
+    
+    $scope.funcUpdate = function() {
+    
+        $scope.url_params.s = $scope.selectedFunc.name.toLowerCase();
+        $('#container').hide();
+        $("#spinner").show();
+        return $scope.updateURL();
+    }
 
 
     // EXECUTE ON LOAD

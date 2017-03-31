@@ -38,6 +38,12 @@
 							<select ng-change="datasetUpdate()" ng-options="x.pretty_name.capitalize() for x in datasets" ng-model="selectedDataset" class="form-control" style="display:inline; width:10em">
 
 							</select>
+                            <div id="functionSelect">
+                                <h4>Select Function:</h4>
+                                <select ng-change="funcUpdate()" ng-options="f.name for f in apiFunc" ng-model="selectedFunc" class="form-control" style="display:inline; width:10em">
+
+                                </select>
+                            </div>
 							<h4 class="shareTitle">Share:</h4>
 							<button type="button" class="btn" ng-click="shareableLink()">Get Shareable Link</button>
 							<!-- <div ng-show="!showLink"  id="link">{{shareUrl}}</div> -->

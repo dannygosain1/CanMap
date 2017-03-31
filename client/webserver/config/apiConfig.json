@@ -1,3 +1,21 @@
 {
-    "apiURL": "http://canmap-api.herokuapp.com/"
+    "apiURL": "http://canmap-api.herokuapp.com",
+    "fnc":{
+        "avg":{
+            "name":"Avg",
+            "s":"?fcn=avg"
+        },
+        "sum":{
+            "name":"Sum",
+            "s":"?fcn=sum"
+        },
+        "max":{
+            "name":"Max",
+            "s":"?fcn=max"
+        },
+        "min":{
+            "name":"Min",
+            "s":"?fcn=min"
+        }
+    }
 }
