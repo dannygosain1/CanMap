@@ -29,3 +29,4 @@ function isInvalid(item){
 String.prototype.replaceAll = function(old, replacement) {
 	return this.split(old).join(replacement);
 }
+
