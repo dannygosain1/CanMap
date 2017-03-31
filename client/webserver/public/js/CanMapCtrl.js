@@ -127,6 +127,8 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
                                         events: {
                                             click: function() {
                                                 $scope.url_params.p = this['hc-key'];
+                                                $('#container').hide();
+                                                $("#spinner").show();
                                                 $scope.updateURL()
                                             }
                                         }
