@@ -177,15 +177,12 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
                                     pointFormatter: function() {
                                         key = this.name || this.properties['CDNAME'] ||  this['hc-key'];
                                         //un camel case CDNAME
-                                        key = (key == this.properties['CDNAME']) ? key.unCamelCase(" ") : key; 
+                                        key = (key == this.properties['CDNAME']) ? key.unCamelCase(" ") : key;
                                         return key + ": <b>" + this.value.toLocaleString() + "</b>"
                                     }
                                 }
                             }],
                             legend: {
-                                layout: 'vertical',
-                                align: 'left',
-                                verticalAlign: 'middle',
                                 reversed: true
                             },
                             credits: {
@@ -194,6 +191,7 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
                             chart: {
                                 backgroundColor:'rgba(255, 255, 255, 0.1)',
                                 spacing: [20, 0, 0, 0],
+                                height: 600,
                             },
                             exporting: {
                                 enabled: false
