@@ -166,13 +166,13 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
                                         }
                                     }
                                 },
-                                tooltip: {
-                                    pointFormat: '{point.name}: <b>{point.value}</b>'
-                                },
                                 states: {
                                     hover: {
                                         color: '#edc84e'
                                     }
+                                },
+                                tooltip: {
+                                    pointFormat: '{point.name}: <b>{point.value}</b>'
                                 }
                             }],
                             legend: {
