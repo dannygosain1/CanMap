@@ -79,16 +79,6 @@ root.get('/config/:file', function(req, res){
     });
 });
 
-root.get('/config/:file', function(req, res){
-    FS.readFile(PATH.join(__dirname,'config',req.params.file),'utf-8',function(err, data){
-        if(err){
-            res.send(err);
-        }
-        console.log(data);
-        res.json(JSON.parse(data));
-    });
-});
-
 /*-------------------*
 **-  Startup Server  -
 **-------------------*/
