@@ -148,3 +148,11 @@ header {
 .shareTitle {
     margin-top:2em;
 }
+
+.title {
+    margin-left: 0.4em;
+}
+
+#spinner {
+    margin-top: 15%;
+}

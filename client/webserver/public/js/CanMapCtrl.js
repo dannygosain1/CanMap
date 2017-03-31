@@ -1,7 +1,7 @@
 app.controller("canMapCtrl", function($scope, $rootScope, $http) {
 
    $scope.shareableLink = function(){
-       $('#shareLink').show();
+       $('#shareLink').toggle();
    }
    // CONFIG FUNCTIONS
    $scope.getApiURL = function(){
@@ -17,6 +17,7 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
     }
 
     $scope.loadConfig = function(){
+        $scope.url_origin = $(location).attr('origin'); 
         return $scope.getApiURL().then($scope.getProvIdMapping);
     }
 
