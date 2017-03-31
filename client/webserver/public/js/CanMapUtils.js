@@ -24,6 +24,10 @@ function isInvalid(item){
         return false;
     }
 }
+//http://stackoverflow.com/questions/1144783/how-to-replace-all-occurrences-of-a-string-in-javascript
+String.prototype.replaceAll = function(old, replacement) {
+	return this.split(old).join(replacement);
+}
 
 //Additional Date Prototype to easy add days to a date.
 Date.prototype.addDays = function(days) { //http://stackoverflow.com/questions/563406/add-days-to-javascript-date

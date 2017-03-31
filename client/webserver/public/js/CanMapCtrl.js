@@ -1,4 +1,3 @@
-
 app.controller("canMapCtrl", function($scope, $rootScope, $http) {
 
    // CONFIG FUNCTIONS
@@ -86,7 +85,7 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
             for(var d = 0; d < results.data.length; d++){
                 $scope.datasets.push({
                     id:d,
-                    name:results.data[d].split(" ").join("_"),
+                    name:results.data[d].replaceAll(" ", "_"),
                     pretty_name:results.data[d]
                 });
             }
@@ -102,12 +101,13 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
         //Logic based on parameters
         $scope.selectedDataset = $scope.datasets[$scope.url_params.d];
         var detail = '';
-        //var detail = '/sum';
-        return $http.get($scope.apiURL+"/province/"+$scope.url_params.p+'/'+$scope.datasets[$scope.url_params.d].name+detail)
-            .then(function(response) {
+        var dataUrl =  $scope.apiURL+"/province/" +
+                        $scope.url_params.p+'/'+$scope.datasets[$scope.url_params.d].name+detail;
+        return $http.get(dataUrl).then(response => {
                 var data = response.data;
-                return $http.get('/maps/canada.geo.json')
-                    .then(function(result) {
+                var mapUrl = '/maps/'+$scope.provIdMapping[$scope.url_params.p].abbr.toLowerCase() +
+                                '.geo.min.json';
+                $http.get(mapUrl).then(result => {
                         $("#spinner").hide();
                         $('#container').show();
                         Highcharts.mapChart('container', {
@@ -121,19 +121,49 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
                                     verticalAlign: 'middle'
                                 }
                             },
+                            plotOptions: {
+                                series: {
+                                    point: {
+                                        events: {
+                                            click: function() {
+                                                $scope.url_params.p = this['hc-key'];
+                                                $('#container').hide();
+                                                $("#spinner").show();
+                                                $scope.updateURL()
+                                            }
+                                        }
+                                    }
+
+                                },
+
+                            },
                             colorAxis: {
                                 tickPixelInterval: 100,
                                 minColor:'#ffd1d1',
                                 maxColor:'#8c0202',
                             },
                             series: [{
-                                name: $scope.selectedDataset,
+                                name: $scope.selectedDataset.pretty_name,
                                 data: data,
                                 mapData: result.data,
                                 borderColor: "#fff",
                                 borderWidth: 1,
                                 margin:0,
                                 nullColor:'#b2aeae',
+                                dataLabels: {
+                                    enabled: true,
+                                    color: '#FFFFFF',
+                                    formatter: function() {
+                                        if(this.point.properties && this.point.properties['hc-key']) {
+                                            var key = this.point.properties['hc-key'];
+                                            if($scope.provIdMapping[key])
+                                                return $scope.provIdMapping[key].abbr;
+                                        }
+                                    }
+                                },
+                                tooltip: {
+                                    pointFormat: '{point.name}: <b>{point.value}</b>'
+                                }
                             }],
                             legend: {
                                 layout: 'vertical',
