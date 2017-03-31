@@ -34,6 +34,7 @@
 						<div class="row">
 							<h4>Select Dataset:</h4>
 							<select ng-change="datasetUpdate()" ng-options="x.pretty_name.capitalize() for x in datasets" ng-model="selectedDataset" class="form-control" style="display:inline; width:10em">
+
 							</select>
 							<h4 class="shareTitle">Share:</h4>
 							<button type="button" class="btn" ng-click="shareableLink()">Get Shareable Link</button>
@@ -67,7 +68,11 @@
 									</ul>
 								</div>
 							</div>
-						</div> 
+
+						</div>
+
+						</div>
+
 					</div>
 				</div>
 			</div>
