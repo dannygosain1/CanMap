@@ -102,7 +102,9 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
     $scope.renderPage = function(){
         //Logic based on parameters
         $scope.selectedDataset = $scope.datasets[$scope.url_params.d];
-        return $http.get($scope.apiURL+"/canada/"+$scope.datasets[$scope.url_params.d].name+"/sum")
+        var detail = '';
+        //var detail = '/sum';
+        return $http.get($scope.apiURL+"/province/"+$scope.url_params.p+'/'+$scope.datasets[$scope.url_params.d].name+detail)
             .then(function(response) {
                 var data = response.data;
                 return $http.get('/maps/canada.geo.json')
