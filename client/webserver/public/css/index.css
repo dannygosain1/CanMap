@@ -73,6 +73,7 @@ header {
 #main > section.cover {
   background-color: #81918E;
   background-image: url("/img/canada.jpg");
+  background-position: bottom;
 }
 
 #main > section.map {
