@@ -73,11 +73,19 @@ header {
 #main > section.cover {
   background-color: #81918E;
   background-image: url("/img/canada.jpg");
+  background-position: bottom;
 }
 
 #main > section.map {
   background-color: #f5fafa;
 }
+
+.container {
+  min-height:100%;
+  min-width: 100%;
+  position:absolute;
+}
+
 /* Dropdown */
 .options {
   align-items: center;
@@ -140,4 +148,12 @@ header {
 
 .shareTitle {
     margin-top:2em;
+}
+
+.title {
+    margin-left: 0.4em;
+}
+
+#spinner {
+    margin-top: 15%;
 }
