@@ -101,8 +101,11 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
     $scope.renderPage = function(){
         //Logic based on parameters
         $scope.selectedDataset = $scope.datasets[$scope.url_params.d];
-        var detail = '';
-        //var detail = '/sum';
+        var detail = '?fcn=sum'; //Sum
+        if($scope.url_params.d){
+            
+        }
+        //var detail = ''; //Average
         return $http.get($scope.apiURL+"/province/"+$scope.url_params.p+'/'+$scope.datasets[$scope.url_params.d].name+detail)
             .then(function(response) {
                 var data = response.data;
