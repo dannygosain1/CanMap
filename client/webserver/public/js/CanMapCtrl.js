@@ -132,7 +132,8 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
                                 mapData: result.data,
                                 borderColor: "#fff",
                                 borderWidth: 1,
-                                margin:0
+                                margin:0,
+                                nullColor:'#b2aeae',
                             }],
                             legend: {
                                 layout: 'vertical',
@@ -146,7 +147,6 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
                             chart: {
                                 backgroundColor:'rgba(255, 255, 255, 0.1)',
                                 spacing: [20, 0, 0, 0],
-                                marginTop: 10
                             },
                             exporting: {
                                 enabled: false
