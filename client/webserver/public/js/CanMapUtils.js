@@ -32,5 +32,11 @@ String.prototype.replaceAll = function(old, replacement) {
 
 //http://stackoverflow.com/questions/4878756/javascript-how-to-capitalize-first-letter-of-each-word-like-a-2-word-city
 String.prototype.capitalize = function(){
-    return this.toLowerCase().replace( /(^|\s)([a-z])/g , function(m,p1,p2){ return p1+p2.toUpperCase(); } ); }
+    return this.toLowerCase().replace( /(^|\s)([a-z])/g , function(m,p1,p2){ return p1+p2.toUpperCase(); } );
+}
+
+// adds supplied string before all capital letters
+String.prototype.unCamelCase = function(c){
+    return this.replace( /[A-Z]/g , function(m){ return c+m; }).trim();
+}
 

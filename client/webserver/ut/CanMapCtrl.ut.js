@@ -89,6 +89,11 @@ describe('CanMapUtils.js', function(){
             expect(str.replaceAll(o,n)).toBe("a_b___c_d_e_f");
         });
         
+        it('4) remove nothing space', function(){
+            str = "abc";
+            expect(str.replaceAll(o,n)).toBe("abc");
+        });
+        
     });
     
     // string.prototype.capitalize()
@@ -162,12 +167,66 @@ describe('CanMapUtils.js', function(){
         });
     });
     
+    // string.prototype.unCamelCase()
+    describe('string.prototype.unCamelCase', function() {
+        
+        var str,o;
+        
+        beforeEach(function(){
+            str = "thisIsASetOfWords";
+            o = " ";
+        });
+        
+        afterEach(function(){
+            o = " ";
+        });
+        
+        
+        it('1) single lowercase letter', function(){
+            str = "a";
+            expect(str.unCamelCase(o)).toBe("a");
+        });
+        
+        it('2) single capital letter', function(){
+            str = "A";
+            expect(str.unCamelCase(o)).toBe("A");
+        });
+        
+        it('3) single capital letter followed by lower', function(){
+            str = "Abc";
+            expect(str.unCamelCase(o)).toBe("Abc");
+        });
+        
+        it('4) two lower case words', function(){
+            str = "abc def";
+            expect(str.unCamelCase(o)).toBe("abc def");
+        });
+        
+        it('5) camel case', function(){
+            str = "abcDef";
+            expect(str.unCamelCase(o)).toBe("abc Def");
+        });
+        
+        it('6) camel case with leading capital', function(){
+            str = "AbcDef";
+            expect(str.unCamelCase(o)).toBe("Abc Def");
+        });
+        
+        it('7) excess spaces', function(){
+            str = "   AbcDeFG   ";
+            expect(str.unCamelCase(o)).toBe("Abc De F G");
+        });
+        
+        it('8) sentence / title', function(){
+            expect(str.unCamelCase(o)).toBe("this Is A Set Of Words");
+        });
+        
+    });
+    
     
 });
-//*/
 
 // CanMapCtrl.js 
-/*
 describe('CanMapCtrl.js',function(){
     
     // set angular app
@@ -188,12 +247,11 @@ describe('CanMapCtrl.js',function(){
         });
         
 
-        
+/*        
         it('gets the api url from the webserver config directory', function(){
             $scope.getApiURL();
             expect(typeof($scope.apiURL)).toBe("string");
-        });
+        });*/
     });
 });
-//*/
 
