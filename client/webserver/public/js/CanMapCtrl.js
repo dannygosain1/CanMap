@@ -117,7 +117,8 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
                             mapNavigation: {
                                 enabled: true,
                                 buttonOptions: {
-                                    verticalAlign: 'top'
+                                    align: 'right',
+                                    verticalAlign: 'middle'
                                 }
                             },
                             colorAxis: {
@@ -131,12 +132,21 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
                                 mapData: result.data,
                                 borderColor: "#fff",
                                 borderWidth: 1,
+                                margin:0
                             }],
+                            legend: {
+                                layout: 'vertical',
+                                align: 'left',
+                                verticalAlign: 'middle',
+                                reversed: true
+                            },
                             credits: {
                                 enabled: false
                             },
                             chart: {
-                                backgroundColor:'rgba(255, 255, 255, 0.1)'
+                                backgroundColor:'rgba(255, 255, 255, 0.1)',
+                                spacing: [20, 0, 0, 0],
+                                marginTop: 10
                             },
                             exporting: {
                                 enabled: false

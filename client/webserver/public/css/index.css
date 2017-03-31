@@ -247,7 +247,7 @@ header {
 }
 
 #main > section.cover {
-  padding: 6em 0;
+  padding: 0;
   background-size: cover;
   background-position: center center;
 }
@@ -276,8 +276,8 @@ header {
   }
 
   #container {
-    height: 25em;
-  	width: 25em;
+    height: 32em;
+  	width: 32em;
     margin: 0 auto;
   }
   .loading {
@@ -285,7 +285,6 @@ header {
     text-align: center;
     color: gray;
   }
-
 }
 
 /*Normal*/
@@ -301,8 +300,8 @@ header {
   /* Load Map */
 
   #container {
-    height: 25em;
-  	width: 25em;
+    height: 32em;
+  	width: 32em;
   	margin: 0 auto;
   }
   .loading {
@@ -318,11 +317,15 @@ header {
     font-size: 16pt;
   }
 
+  #main section.cover {
+      padding: 0 1em;
+  }
+
   /* Load Map */
 
   #container {
-    height: 25em;
-  	width: 25em;
+    height: 32em;
+  	width: 32em;
   	margin: 0 auto;
   }
   .loading {
@@ -358,9 +361,9 @@ header {
   }
 
   #main section.cover {
-    padding: 1em 0;
+      padding: 0 1em;
   }
-
+  
   /* Load Map */
 
   #container {
@@ -398,16 +401,12 @@ header {
 	}
 
 	#main section.cover {
-		padding: 1em 0em;
-	}
-
-	#main section.cover header {
 		padding: 0 1em;
 	}
 
   #container {
-    height: 18em;
-  	width: 18em;
+    height: 15em;
+  	width: 15em;
   	margin: 0 auto;
   }
 
@@ -416,6 +415,7 @@ header {
   	text-align: center;
   	color: gray;
   }
+
 }
 
 /* Dropdown */

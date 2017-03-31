@@ -13,56 +13,31 @@
 
 	<!-- Main -->
 	<div id="main">
+	<!-- Title -->
+		<section id="top" class="cover">
+			<div class="content">
+				<header>
+					<h2><strong>CanMap</strong></h2>
+				</header>
+			</div>
+		</section>
 
-		<!-- Title -->
-			<section id="top" class="cover">
-				<div class="content">
-					<header>
-						<h2><strong>CanMap</strong></h2>
-					</header>
-				</div>
-			</section>
-
-		<!-- Content -->
-			<section class="map">
-				<div class="content">
-					<div class="row">
-						<div class="col-xs-9">
-							<img id="spinner" ng-src="img/loading.gif">
-							<div id="container"></div>
-						</div>
-						<div class="col-xs-3">
-							<h4>Select Dataset:</h4>
-							<select ng-change="datasetUpdate()" ng-options="x.pretty_name for x in datasets" ng-model="selectedDataset" class="form-control" style="display:inline; width:10em">
-							</select>
-						</div>
+	<!-- Content -->
+		<section class="map">
+			<div class="content">
+				<div class="row">
+					<div class="col-xs-9">
+						<img id="spinner" ng-src="img/loading.gif">
+						<div id="container"></div>
 					</div>
-
-				</div>
-
-			</section>
-
-			<!--
-			<section class="map">
-				<div class="content" ng-controller="renderCtrl">
-					<div class="row">
-
-						<div class="col-xs-9">
-							<img id="spinner" ng-src="img/loading.gif">
-							<div id="container">
-							</div>
-						</div>
-						<div class="col-xs-3">
-							<h4>Select Dataset:</h4>
-							<select ng-change="update()" ng-options="x for x in datasets" ng-model="selectedDataset" class="form-control" style="display:inline; width:10em">
-							</select>
-						</div>
+					<div class="col-xs-3">
+						<h4>Select Dataset:</h4>
+						<select ng-change="datasetUpdate()" ng-options="x.pretty_name for x in datasets" ng-model="selectedDataset" class="form-control" style="display:inline; width:10em">
+						</select>
 					</div>
-					<br />
 				</div>
-			</section>
-		 -->
-
+			</div>
+		</section>
 	</div>
 
 	<!-- Scripts -->
