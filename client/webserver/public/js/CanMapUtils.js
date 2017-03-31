@@ -25,6 +25,10 @@ function isInvalid(item){
     }
 }
 
+String.prototype.replaceAll = function(old, replacement) {
+	return this.split(old).join(replacement);
+}
+
 //Additional Date Prototype to easy add days to a date.
 Date.prototype.addDays = function(days) { //http://stackoverflow.com/questions/563406/add-days-to-javascript-date
   var dat = new Date(this.valueOf());
