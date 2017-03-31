@@ -32,7 +32,7 @@
 					</div>
 					<div class="col-xs-3">
 						<h4>Select Dataset:</h4>
-						<select ng-change="datasetUpdate()" ng-options="x.pretty_name for x in datasets" ng-model="selectedDataset" class="form-control" style="display:inline; width:10em">
+						<select ng-change="datasetUpdate()" ng-options="x.pretty_name.capitalize() for x in datasets" ng-model="selectedDataset" class="form-control" style="display:inline; width:10em">
 						</select>
 					</div>
 				</div>

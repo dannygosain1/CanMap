@@ -111,9 +111,10 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
                 $http.get(mapUrl).then(result => {
                         $("#spinner").hide();
                         $('#container').show();
+                        var title = $scope.provIdMapping[$scope.url_params.p].name + ' - ' + $scope.datasets[$scope.url_params.d].pretty_name.capitalize()
                         Highcharts.mapChart('container', {
                             title: {
-                                text: $scope.datasets[$scope.url_params.d].pretty_name
+                                text: title
                             },
                             mapNavigation: {
                                 enabled: true,

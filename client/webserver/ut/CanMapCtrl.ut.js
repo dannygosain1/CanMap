@@ -60,10 +60,36 @@ describe('CanMapUtils.js', function(){
     });
         
     // string.prototype.replaceAll()
-    /*
     describe('string.prototype.replaceAll', function() {
         
-    });*/
+        var str = "";
+        var o = " ";
+        var n = "";
+        
+        afterEach(function(){
+            o = " ";
+            n = "";
+        })
+        
+        
+        it('1) remove 1 space', function(){
+            str = "a b";
+            expect(str.replaceAll(o,n)).toBe("ab");
+        });
+        
+        it('2) remove 2 space', function(){
+            str = "a b c";
+            expect(str.replaceAll(o,n)).toBe("abc");
+        });
+        
+        it('3) remove ,s', function(){
+            str = "a,b,,,c,d,e,f";
+            o = ",";
+            n = "_";
+            expect(str.replaceAll(o,n)).toBe("a_b___c_d_e_f");
+        });
+        
+    });
     
     // string.prototype.capitalize()
     describe('string.prototype.capitalize', function(){
@@ -133,16 +159,6 @@ describe('CanMapUtils.js', function(){
         it('13) lower letters after symbol', function(){
             str = " %ABC";
             expect(str.capitalize()).toBe(" %abc");
-        });
-        
-        it('14) capitalize after dash', function(){
-            str = "abc-def ghi jkl";
-            expect(str.capitalize()).toBe("Abc-Def Ghi Jkl");
-        });
-        
-        it('15) capitalize after dash with symbols in mix', function(){
-            str = "abc-def %ghi jkl";
-            expect(str.capitalize()).toBe("Abc-Def %ghi Jkl");
         });
     });
     

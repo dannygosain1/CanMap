@@ -30,3 +30,7 @@ String.prototype.replaceAll = function(old, replacement) {
 	return this.split(old).join(replacement);
 }
 
+//http://stackoverflow.com/questions/4878756/javascript-how-to-capitalize-first-letter-of-each-word-like-a-2-word-city
+String.prototype.capitalize = function(){
+    return this.toLowerCase().replace( /(^|\s)([a-z])/g , function(m,p1,p2){ return p1+p2.toUpperCase(); } ); }
+
