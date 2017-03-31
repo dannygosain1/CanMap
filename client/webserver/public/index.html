@@ -26,29 +26,53 @@
 		<!-- Content -->
 			<section class="map">
 				<div class="content">
-					<header>
-						<div class="dropdown options">
+					<div class="row">
+						<div class="col-xs-9">
+							<img id="spinner" ng-src="img/loading.gif">
+							<div id="container"></div>
+						</div>
+						<div class="col-xs-3">
 							<h4>Select Dataset:</h4>
 							<select ng-change="datasetUpdate()" ng-options="x.pretty_name for x in datasets" ng-model="selectedDataset" class="form-control" style="display:inline; width:10em">
 							</select>
 						</div>
-					</header>
-					<br />
-					<img id="spinner" ng-src="img/loading.gif">
-					<div id="container"></div>
+					</div>
+
 				</div>
 
 			</section>
+
+			<!--
+			<section class="map">
+				<div class="content" ng-controller="renderCtrl">
+					<div class="row">
+
+						<div class="col-xs-9">
+							<img id="spinner" ng-src="img/loading.gif">
+							<div id="container">
+							</div>
+						</div>
+						<div class="col-xs-3">
+							<h4>Select Dataset:</h4>
+							<select ng-change="update()" ng-options="x for x in datasets" ng-model="selectedDataset" class="form-control" style="display:inline; width:10em">
+							</select>
+						</div>
+					</div>
+					<br />
+				</div>
+			</section>
+		 -->
+
 	</div>
 
 	<!-- Scripts -->
     <script src="/js/angular.min.js"></script>
     <script src="/js/jquery.min.js"></script>
-    
+
     <script src="/js/CanMapUtils.js"></script>
 	<script src="/js/app.js"></script>
     <script src="/js/CanMapCtrl.js"></script>
-    
+
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/highmaps/code/highmaps.js"></script>
     <script src="/js/highmaps/code/modules/data.js"></script>
