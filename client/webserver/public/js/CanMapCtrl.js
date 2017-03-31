@@ -131,6 +131,10 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
                                     point: {
                                         events: {
                                             click: function() {
+                                                if(!(this['hc-key'] in $scope.provIdMapping)) {
+                                                    return
+                                                }
+                                                
                                                 $scope.url_params.p = this['hc-key'];
                                                 $('#container').hide();
                                                 $("#spinner").show();
