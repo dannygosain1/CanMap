@@ -31,9 +31,43 @@
 						<div id="container"></div>
 					</div>
 					<div class="col-xs-3">
-						<h4>Select Dataset:</h4>
-						<select ng-change="datasetUpdate()" ng-options="x.pretty_name for x in datasets" ng-model="selectedDataset" class="form-control" style="display:inline; width:10em">
-						</select>
+						<div class="row">
+							<h4>Select Dataset:</h4>
+							<select ng-change="datasetUpdate()" ng-options="x.pretty_name for x in datasets" ng-model="selectedDataset" class="form-control" style="display:inline; width:10em">
+							</select>
+							<h4 class="shareTitle">Share:</h4>
+							<button type="button" class="btn" ng-click="shareableLink()">Get Shareable Link</button>
+							<!-- <div ng-show="!showLink"  id="link">{{shareUrl}}</div> -->
+							<input id="shareLink" onClick="this.select();" type="text" class="form-control" value={{shareUrl}} style="display:none">
+						</div>
+						<div class="row">
+							<div id="socialHolder">
+								<div id="socialShare" class="btn-group share-group">
+									<ul class="inline-list">
+										<li>
+											<a data-original-title="Facebook" rel="tooltip"  href="https://www.facebook.com/sharer/sharer.php?u={{shareUrl}}" target="_blank" class="btn btn-facebook" data-placement="left">
+												<i class="fa fa-facebook"></i>
+											</a>
+										</li>
+										<li>
+											<a data-original-title="Twitter" rel="tooltip"  href="http://twitter.com/share?url={{shareUrl}}" target="_blank" class="btn btn-twitter" data-placement="left">
+												<i class="fa fa-twitter"></i>
+											</a>
+										</li>
+										<li>
+											<a data-original-title="LinkedIn" rel="tooltip"  href="https://www.linkedin.com/shareArticle?mini=true&url={{shareUrl}}" target="_blank" class="btn btn-linkedin" data-placement="left">
+												<i class="fa fa-linkedin"></i>
+											</a>
+										</li>
+										<li>
+											<a data-original-title="Reddit" rel="tooltip" href="http://www.reddit.com/submit?url={{shareUrl}}" target="_blank" class="btn btn-reddit" data-placement="left">
+												<i class="fa fa-reddit"></i>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
