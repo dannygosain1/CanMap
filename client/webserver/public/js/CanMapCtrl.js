@@ -126,7 +126,8 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
                                     point: {
                                         events: {
                                             click: function() {
-                                                console.log(this.name)
+                                                $scope.url_params.p = this['hc-key'];
+                                                $scope.updateURL()
                                             }
                                         }
                                     }
