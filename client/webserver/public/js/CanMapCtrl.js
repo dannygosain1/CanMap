@@ -33,7 +33,6 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
             if(key == 'p'){
 
                 if(isNaN(val) || val < 0 || isInvalid($scope.provIdMapping[val])){
-                    console.log('Invalid ProvID='+val);
                     return; // = continue for forEach
                 }
 
