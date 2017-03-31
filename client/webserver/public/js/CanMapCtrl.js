@@ -100,7 +100,9 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
     $scope.renderPage = function(){
         //Logic based on parameters
         $scope.selectedDataset = $scope.datasets[$scope.url_params.d];
+        
         var detail = '';
+        
         var dataUrl =  $scope.apiURL+"/province/" +
                         $scope.url_params.p+'/'+$scope.datasets[$scope.url_params.d].name+detail;
         return $http.get(dataUrl).then(response => {
