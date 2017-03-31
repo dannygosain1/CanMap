@@ -159,16 +159,20 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
                                     enabled: true,
                                     color: '#FFFFFF',
                                     formatter: function() {
-                                        if(this.point.properties && this.point.properties['hc-key']) {
+                                        if(this.point.properties && this.point.properties['hc-key'] && !$scope.isProvince) {
                                             var key = this.point.properties['hc-key'];
                                             if($scope.provIdMapping[key])
                                                 return $scope.provIdMapping[key].abbr;
+                                        } else if(this.point.properties && this.point.properties['CDNAME']) {
+                                            return key.unCamelCase(" ");
                                         }
                                     }
                                 },
                                 tooltip: {
                                     pointFormatter: function() {
-                                        key = isInvalid(this.name) ? this['hc-key'] : this.name;
+                                        key = this.name || this.properties['CDNAME'] ||  this['hc-key'];
+                                        //un camel case CDNAME
+                                        key = (key == this.properties['CDNAME']) ? key.unCamelCase(" ") : key; 
                                         return key + ": <b>" + this.value.toLocaleString() + "</b>"
                                     }
                                 }
