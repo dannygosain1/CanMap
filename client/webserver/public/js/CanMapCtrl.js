@@ -1,5 +1,8 @@
 app.controller("canMapCtrl", function($scope, $rootScope, $http) {
 
+   $scope.shareableLink = function(){
+       $('#shareLink').show();
+   }
    // CONFIG FUNCTIONS
    $scope.getApiURL = function(){
        return $http.get('/config/apiConfig.json').then(function(result){
@@ -61,7 +64,6 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
 
     //jquery
     $scope.updateURL = function(path){
-
         if(isInvalid(path)){
 
             var pathname = $(location).attr('pathname');
@@ -99,6 +101,7 @@ app.controller("canMapCtrl", function($scope, $rootScope, $http) {
     //RENDER FUNCTIONS
     $scope.renderPage = function(){
         //Logic based on parameters
+        $scope.shareUrl = $(location).attr('href');
         $scope.selectedDataset = $scope.datasets[$scope.url_params.d];
         var detail = '';
         
