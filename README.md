@@ -1,7 +1,7 @@
 # CanMap
-Danny Gosain
-Raunaq Suri
-Cory Welch
+- Danny Gosain
+- Raunaq Suri
+- Cory Welch
 
 # Instructions to Run
 ## Processing
