@@ -1,11 +1,7 @@
 # CanMap
-SYDE 322 - Final Project
-
-Dhananjay (Danny) Gosain 20524438
-
-Raunaq Suri 20519728
-
-Cory Welch 20520003
+Danny Gosain
+Raunaq Suri
+Cory Welch
 
 # Instructions to Run
 ## Processing
@@ -26,8 +22,6 @@ The data set is included in the processing directory if you would like to try it
 ## Client
 1) `npm install`
 2) `node webserver.js`
-:)
-
 
 # ALTERNATIVELY
 canmap.herokuapp.com __webserver__
