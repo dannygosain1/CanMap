@@ -24,6 +24,4 @@ The data set is included in the processing directory if you would like to try it
 2) `node webserver.js`
 
 # ALTERNATIVELY
-canmap.herokuapp.com __webserver__
-
-canmap-api.herokuapp.com __api_server__
+<http://canmap.herokuapp.com/> __webserver__
